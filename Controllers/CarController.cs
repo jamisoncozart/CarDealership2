@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using CarDealership.Models;
 using System.Collections.Generic;
 
 namespace CarDealership.Controllers
@@ -20,9 +20,9 @@ namespace CarDealership.Controllers
     }
 
     [HttpPost("/cars")]
-    public ActionResult Create(string description)
+    public ActionResult Create(string make, string model, int year)
     {
-      Car myCar = new Car(description);
+      Car myCar = new Car(make, model, year);
       return RedirectToAction("Index");
     }
   }
